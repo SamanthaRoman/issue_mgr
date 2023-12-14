@@ -15,6 +15,11 @@
                         <h5 class="card-title">{{ issue.summary|truncatechars:64 }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Assignee: {{ issue.assignee }}</h6>
                         <p class="card-text">{{ issue.description|truncatechars:64 }}</p>
+                        <form method="POST" action="{% url 'update_status' issue.id %}">
+                            <input type="hidden" id="id_status" name="status" value="2">
+                            {% csrf_token %}
+                            <input type="submit" value="Start" class="btn btn-success card-btn">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -29,7 +34,11 @@
                         <h5 class="card-title">{{ issue.summary|truncatechars:64 }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Assignee: {{ issue.assignee }}</h6>
                         <p class="card-text">{{ issue.description|truncatechars:64 }}</p>
-                        <a href="#" class="card-link">More..</a>
+                        <form method="POST" action="{% url 'update_status' issue.id %}">
+                            <input type="hidden" id="id_status" name="status" value="3">
+                            {% csrf_token %}
+                            <input type="submit" value="Complete" class="btn btn-success card-btn">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -44,7 +53,11 @@
                         <h5 class="card-title">{{ issue.summary|truncatechars:64 }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Assignee: {{ issue.assignee }}</h6>
                         <p class="card-text">{{ issue.description|truncatechars:64 }}</p>
-                        <a href="#" class="card-link">More..</a>
+                        <form method="POST" action="{% url 'update_status' issue.id %}">
+                            <input type="hidden" id="id_status" name="status" value="4">
+                            {% csrf_token %}
+                            <input type="submit" value="Restart" class="btn btn-success card-btn">
+                        </form>
                     </div>
                 </div>
             </div>

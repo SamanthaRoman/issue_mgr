@@ -28,16 +28,14 @@ class BoardView(ListView):
             status=done 
         ).order_by("created_on").reverse()
         return context 
-    
-# class StatusUpdateView(UpdateView):
-#     template_name = "issues/edit_status.html"
-#     model = Issue
-#     fields = ["summary", "description", "status"]
-#     success_url = reverse_lazy("board")
 
-#     def form_valid(self, form):
-#         status = Status.objects.get(name=form.instance.status)
-#         return super().form_valid(form)
+# update issue
+class StatusUpdateView(UpdateView):
+    template_name = "issues/edit.html"
+    model = Issue
+    fields = ["status"]
+    success_url = reverse_lazy("board")
+
 
 
 # Create 
@@ -51,4 +49,4 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 # Read 
-class IssueDetailView(DetailView)
+# class IssueDetailView(DetailView)
