@@ -1,0 +1,11 @@
+.task-list-container {
+    background-color: rgb(213, 244, 252);
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 5px;
+}
+
+.card:hover{
+    background-color: aqua;
+}
